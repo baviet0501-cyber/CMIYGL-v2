@@ -170,8 +170,8 @@ if (!self.__WB_pmw) {
           }
           ))
             , I = function() {
-              var e = Object(b.a)(l.a.mark((function e(t, n, c, r, a, s) {
-                  var o, i, b, u, d, j, h, p, f, x, v, k, N, C, S, I, D, P, T, R, E;
+              var e = Object(b.a)(l.a.mark((function e(t, n, c, r, a, s, o) {
+                  var customDate = o, o, i, b, u, d, j, h, p, f, x, v, k, N, C, S, I, D, P, T, R, E;
                   return l.a.wrap((function(e) {
                       for (; ; )
                           switch (e.prev = e.next) {
@@ -212,7 +212,7 @@ if (!self.__WB_pmw) {
                               0,
                               x(0),
                               "yellow" === s ? h.drawImage(o, 0, 0) : "mint" === s ? h.drawImage(i, 0, 0) : "pink" === s ? h.drawImage(b, 0, 0) : "blue" === s ? h.drawImage(u, 0, 0) : h.drawImage(o, 0, 0),
-                              h.drawImage(d, 0, 0),
+                              h.drawImage(d, 0, 0, 2014, 1277),
                               h.globalCompositeOperation = "source-over",
                               !t) {
                                   e.next = 42;
@@ -238,7 +238,7 @@ if (!self.__WB_pmw) {
                               1,
                               x(1),
                               k = h,
-                              N = n,
+                              N = String(n || ""),
                               h.font = "90px Nanum Pen Script",
                               C = k.measureText(N).width,
                               p = 1530 - C / 2,
@@ -247,21 +247,30 @@ if (!self.__WB_pmw) {
                               h.globalCompositeOperation = "source-over",
                               0,
                               x(0),
-                              S = c,
+                              S = String(c || ""),
                               h.font = "90px Nanum Pen Script",
                               I = k.measureText(S).width,
                               p = 1530 - I / 2,
                               f = 410,
-                              h.fillText(c, p, f),
+                              h.fillText(S, p, f),
                               h.globalCompositeOperation = "source-over",
                               0,
                               x(0),
-                              D = r,
+                              D = String(r || ""),
                               h.font = "90px Nanum Pen Script",
                               P = k.measureText(D).width,
                               p = 1530 - P / 2,
                               f = 485,
-                              h.fillText(r, p, f),
+                              h.fillText(D, p, f),
+                              h.globalCompositeOperation = "source-over",
+                              0,
+                              x(0),
+                              S = String(customDate || ""),
+                              h.font = "90px Nanum Pen Script",
+                              I = k.measureText(S).width,
+                              p = 1530 - I / 2,
+                              f = 560,
+                              h.fillText(S, p, f),
                               h.globalCompositeOperation = "source-over",
                               !a) {
                                   e.next = 79;
@@ -276,12 +285,12 @@ if (!self.__WB_pmw) {
                               break;
                           case 79:
                               h.fillStyle = "#000",
-                              R = n,
+                              R = String(n || ""),
                               h.font = "60px Rock Salt",
                               E = k.measureText(R).width,
                               p = 1415 - E / 2,
                               f = 1090,
-                              h.fillText(n, p, f);
+                              h.fillText(R, p, f);
                           case 86:
                               return h.globalCompositeOperation = "source-over",
                               e.abrupt("return", j.toDataURL());
@@ -293,7 +302,7 @@ if (!self.__WB_pmw) {
                   ), e)
               }
               )));
-              return function(t, n, c, r, a, s) {
+              return function(t, n, c, r, a, s, o) {
                   return e.apply(this, arguments)
               }
           }()
@@ -356,6 +365,10 @@ if (!self.__WB_pmw) {
                 , ce = Object(u.a)(ne, 2)
                 , re = ce[0]
                 , ae = ce[1]
+                , ge = Object(c.useState)("")
+                , we = Object(u.a)(ge, 2)
+                , ye = we[0]
+                , ve = we[1]
                 , se = Object(c.useState)()
                 , oe = Object(u.a)(se, 2)
                 , ie = oe[0]
@@ -380,7 +393,7 @@ if (!self.__WB_pmw) {
                               switch (e.prev = e.next) {
                               case 0:
                                   return e.next = 2,
-                                  I(re, z, Q, ee, de, Y);
+                                  I(re, String(z || ""), String(Q || ""), String(ee || ""), de, Y, String(ye || ""));
                               case 2:
                                   t = e.sent,
                                   le(t);
@@ -393,7 +406,7 @@ if (!self.__WB_pmw) {
                   }
                   )))()
               }
-              ), [j, re, z, Q, ee, de, Y]),
+              ), [j, re, z, Q, ee, ye, de, Y]),
               Object(c.useEffect)((function() {
                   if (Y) {
                       M("yellow" === Y ? O : "mint" === Y ? m : "pink" === Y ? g : "blue" === Y ? w : O)
@@ -411,6 +424,17 @@ if (!self.__WB_pmw) {
                   }
               }
               ), [Q]),
+              Object(c.useEffect)((function() {
+                  if (ye) {
+                      var e = ye.replace(/\D/g, "")
+                        , t = "";
+                      e.length > 0 && (t += e.substring(0, 2)),
+                      e.length > 2 && (t += "/" + e.substring(2, 4)),
+                      e.length > 4 && (t += "/" + e.substring(4, 8)),
+                      ve(t)
+                  }
+              }
+              ), [ye]),
               Object(C.jsxs)(C.Fragment, {
                   children: [Object(C.jsx)("div", {
                       className: "start-0 top-0 w-100 d-flex flex-column",
@@ -484,6 +508,19 @@ if (!self.__WB_pmw) {
                                   value: ee,
                                   onChange: function(e) {
                                       return te(e.target.value)
+                                  },
+                                  onKeyDown: function(e) {
+                                      return "Enter" === e.key
+                                  }
+                              }), Object(C.jsx)("input", {
+                                  type: "text",
+                                  id: "form-control-custom-date",
+                                  className: "handwriting",
+                                  placeholder: "Date of issue",
+                                  autoComplete: "off",
+                                  value: ye,
+                                  onChange: function(e) {
+                                      return ve(e.target.value)
                                   },
                                   onKeyDown: function(e) {
                                       return "Enter" === e.key

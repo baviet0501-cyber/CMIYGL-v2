@@ -8,14 +8,14 @@
     <script type="text/javascript" src="./static/js/ruffle.js"></script>
     <link rel="stylesheet" type="text/css" href="./static/css/iconochive.css">
     <script src="./static/js/jquery.min.js"></script>
-    <title>CALL ME IF YOU GET LOST | ID GENERATOR</title>
+    <title>NGỐ HƯƠNG`</title>
     <meta name="description" content="Get your passport and #callmeifyougetlost">
     <meta name="keywords"
         content="Tyler The Creator, Call Me If You Get Lost, Lumberjack, Side Street, Columbia Records">
     <meta name="author" content="Columbia Records">
     <meta name="robots" content="noarchive">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta property="og:title" content="CALL ME IF YOU GET LOST | ID GENERATOR">
+    <meta property="og:title" content="NGỐ HƯƠNG`">
     <meta property="og:description" content="Get your passport and #callmeifyougetlost">
     <meta property="og:type" content="website">
     <meta property="og:image" content="./images/og.jpg">
@@ -23,7 +23,7 @@
     <meta name="twitter:site" value="@tylerthecreator">
     <meta name="twitter:creator" value="@tylerthecreator">
     <meta name="twitter:url" value="https://callmeifyougetlost.com/generator">
-    <meta name="twitter:title" value="CALL ME IF YOU GET LOST | ID GENERATOR">
+    <meta name="twitter:title" value="NGỐ HƯƠNG`">
     <meta name="twitter:description" value="Get your passport and #callmeifyougetlost">
     <meta name="twitter:image" content="./images/og.jpg">
     <link rel="shortcut icon" href="./images/favicon.jpg">
@@ -230,7 +230,8 @@
 
         #form-control-date-of-birth,
         #form-control-full-name,
-        #form-control-location {
+        #form-control-location,
+        #form-control-custom-date {
             position: absolute;
             z-index: 0;
             text-align: center;
@@ -256,6 +257,13 @@
 
         #form-control-location {
             top: 10vw;
+            right: 4.6vw;
+            width: 14vw
+        }
+
+        /* Date of issue */
+        #form-control-custom-date {
+            top: 11.9vw;
             right: 4.6vw;
             width: 14vw
         }
@@ -563,7 +571,8 @@
 
             #form-control-date-of-birth,
             #form-control-full-name,
-            #form-control-location {
+            #form-control-location,
+            #form-control-custom-date {
                 font-size: 3.3vw;
                 height: 4vw;
                 line-height: 4vw
@@ -584,6 +593,13 @@
             #form-control-location {
                 width: 22.4vw;
                 top: 20.6vw;
+                right: 17.6vw
+            }
+
+            /* Date of issue (mobile) */
+            #form-control-custom-date {
+                width: 22.4vw;
+                top: 23.6vw;
                 right: 17.6vw
             }
 
@@ -659,7 +675,8 @@
 </head>
 
 <body>
-    <a id="skip-nav" class="screenreader-text" href="https://callmeifyougetlost.com/generator/#wrapper">Skip Navigation or Skip to Content</a>
+    <a id="skip-nav" class="screenreader-text" href="https://callmeifyougetlost.com/generator/#wrapper">Skip Navigation
+        or Skip to Content</a>
     <div id="background"></div>
     <div id="wrapper">
         <div id="call-text" class="open">Click to make your own</div>
@@ -680,6 +697,8 @@
                         class="handwriting" placeholder="Date Of Birth" autocomplete="off" maxlength="10"
                         value=""><input type="text" id="form-control-location" class="handwriting"
                         placeholder="Location" autocomplete="off" value="">
+                    <input type="text" id="form-control-custom-date" class="handwriting" placeholder="MM/DD/YYYY"
+                        autocomplete="off" maxlength="10" value="">
                     <div class="position-absolute cursor-pointer signature-box">Sign Here</div><button
                         class="text-uppercase letter-spaced color-button"><strong>Select Color</strong></button><button
                         class="text-uppercase letter-spaced submit-button"><strong>Get Your ID</strong></button>
